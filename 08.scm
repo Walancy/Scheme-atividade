@@ -1,0 +1,5 @@
+(define (interseccao lst1 lst2)
+  (cond ((null? lst1) '())
+        ((membro? (car lst1) lst2)
+         (cons (car lst1) (interseccao (cdr lst1) lst2)))
+        (else (interseccao (cdr lst1) lst2))))

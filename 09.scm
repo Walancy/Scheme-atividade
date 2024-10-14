@@ -1,0 +1,7 @@
+(define (quicksort lst)
+  (if (null? lst)
+      '()
+      (let* ((pivot (car lst))
+             (menores (filter (lambda (x) (< x pivot)) (cdr lst)))
+             (maiores (filter (lambda (x) (>= x pivot)) (cdr lst))))
+        (append (quicksort menores) (list pivot) (quicksort maiores)))))
